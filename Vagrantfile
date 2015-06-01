@@ -1,12 +1,6 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do | config |
-	if Vagrant.has_plugin?("vagrant-proxyconf")
-		config.proxy.http  = "http://10.142.204.58:8080"
-		config.proxy.https = "http://10.142.204.58:8080"
-		config.proxy.no_proxy = 'localhost,127.0.0.1'
-	end
-	
 	config.vm.provider "hyperv"
 	config.vm.provider "virtualbox"
 	config.vm.box = "ericmann/trusty64"
