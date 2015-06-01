@@ -6,6 +6,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do | config |
 	config.vm.box = "ericmann/trusty64"
 	config.vm.hostname = "railpagevm"
 	config.vm.network "public_network", type: "dhcp"
+	config.vm.synced_folder ".", "/vagrant", disabled: true
 	config.vm.provision "shell", path: "setup.sh"
 	
 	config.ssh.username = "vagrant"
