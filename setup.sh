@@ -29,6 +29,8 @@ mysql -u root --password=vagrant -e "grant all on sparta_unittest.* to 'travis'@
 cd /railpage/railpagecore
 sudo chown vagrant:vagrant /railpage/railpagecore
 composer update >> /railpage/setup.log
+sudo chown -R vagrant:vagrant .
+sudo composer clearcache
 
 echo Alias /railpagecore /railpage/railpagecore/build/logs/html > ~/railpagecore.conf
 echo \<Directory /railpage/railpagecore/build/logs/html\> >> ~/railpagecore.conf
